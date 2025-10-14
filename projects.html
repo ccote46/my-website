@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang = "en-US">
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>        
+        <link href="/styles.css" rel = "stylesheet">
+    </head>
+    <header class="pageHeaderNav">
+        <div class="logo">
+            <a href="/main.html">
+                <img class="cornerLogo"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Williams_Ephs_2021_logo.svg/1200px-Williams_Ephs_2021_logo.svg.png"
+                    alt="Logo" />
+            </a>
+            <p>Projects</p>
+        </div>
+
+    
+        <nav class="pages">
+            <div class="menuContainer">
+                <button class="button" id="menuButton">Menu</button>
+                <ul class="menuList" id="menu" hidden>
+                    <a href = "/main.html" class="menuLinks"><li>Home</li></a>
+                    <a href = "/projects.html" class="menuLinks"><li>Projects</li></a>
+                    <a href = "/aboutme.html" class="menuLinks"><li>About me</li></a>
+                </ul>
+                <script>
+                    const button = document.getElementById("menuButton");
+                    const menu = document.getElementById("menu")
+                    button.addEventListener("mouseenter", function(e){
+                        menu.hidden = false;
+                        menu.addEventListener("mouseleave", function(e){
+                        menu.hidden = true;
+                    });
+                    });
+        
+        
+                </script>
+            </div>
+        </nav>
+    
+
+    </header>
+
+    <body>
+        <div class="projContainer">
+            <div class="indivContainer">
+                <p>Tic-Tac-Toe</p>
+                <a href="https://github.com/ccote46/CS136-Final-Project-1"></a>
+                <img class="tictactoeImg"
+                src="https://upload.wikimedia.org/wikipedia/commons/3/32/Tic_tac_toe.svg"
+                alt="TicTacToe">
+            </div>
+            
+            <div class = "indivContainer">
+                <p>Portfolio Website</p>
+                <img class="portfolio"
+                src=""
+                alt="">
+            </div>
+        </div>
+
+        <div class="projContainer">
+        
+        </div>
+
+
+
+    </body>
+</html>

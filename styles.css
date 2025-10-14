@@ -1,0 +1,170 @@
+/* Container for the header */
+.pageHeaderNav {
+    display: flex;
+    justify-content: space-between; /* Push left and right content apart */
+    align-items: center;            /* Vertically center items */
+    padding: 5px 1px;             /* Optional spacing */
+    background-color: #f9f9f9;      /* Optional: light background */
+    border-bottom: 1px solid #ddd;  /* Optional: bottom border */
+}
+
+/* Logo container (image + text) */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+/* Logo image styling */
+.cornerLogo {
+    width:80px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Pages (nav on the right) */
+.pages {
+    display: flex;
+    align-items: center;
+    gap: 20px;       /* spacing between nav items */
+    font-weight: bold;
+}
+
+.button{
+    background-color:#f9f9f9;
+    border: 0px;
+    width: 50%;
+    font-size: 15px;
+}
+
+.menuContainer {
+    position: relative;
+}
+
+.menuList {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.menuList li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.menuList li:hover {
+    background-color: #f0f0f0;
+}
+
+.menuLinks{
+    color:black;
+}
+.menuLinks li:hover{
+    color:purple;
+}
+
+.socialLogo{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+    justify-self: left;
+    margin: 3px;
+}
+
+.pageFooter{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push left and right content apart */
+    align-items:center;            /* Vertically center items */
+    padding: 1px 2px;             /* Optional spacing */
+    background-color: #f9f9f9;      /* Optional: light background */
+    border-top: 1px solid #ddd;
+    min-height: 10px;
+}
+
+.footerTxt{
+    margin:5px;
+}
+.imageLink{ /*remove link underlines from footer imgs */
+    text-decoration: none;
+}
+
+.aboutMeContainer{
+    display:flex;
+    align-items: center;
+    background-color: #e0c2ef;
+    padding: 2px 1%;
+    margin: 5px;
+}
+.aboutMeImg{
+    width: 70px;
+}
+
+.aboutMeTxt{
+    padding:2px 1%;
+}
+
+.movies {
+    background-color: #b4b2b2;
+    overflow-x: auto;   /* Prevent horizontal overflow */
+    overflow-y: visible;  /* Allow vertical overflow */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px;
+    position: relative;
+}
+
+
+.movies img {
+    max-height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.movies img:hover {
+    transform: scale(1.01);  /* Will grow, but not overflow horizontally */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.favMovCtr{
+    background-color: #b4b2b4;
+    display: inline;
+}
+
+
+.projContainer{
+    display: flex;
+    padding:5px;
+    gap: 20px;
+}
+.indivContainer {
+    background-color: #b4b2b2;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;     
+    padding: 10px;
+    width: fit-content;      
+    border-radius: 8px;
+    padding-top: 0px;   
+    cursor: pointer;
+}
+
+.projContainer img {
+    width: 80px;
+}

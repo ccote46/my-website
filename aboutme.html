@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang = "en-US">
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>        
+        <link href="/styles.css" rel = "stylesheet">
+    </head>
+    <header class="pageHeaderNav">
+        <div class="logo">
+            <a href="/main.html">
+                <img class="cornerLogo"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Williams_Ephs_2021_logo.svg/1200px-Williams_Ephs_2021_logo.svg.png"
+                    alt="Logo" />
+            </a>
+            <p>About me</p>
+        </div>
+
+    
+        <nav class="pages">
+            <div class="menuContainer">
+                <button class="button" id="menuButton">Menu</button>
+                <ul class="menuList" id="menu" hidden>
+                    <a href = "/main.html" class="menuLinks"><li>Home</li></a>
+                    <a href = "/projects.html" class="menuLinks"><li>Projects</li></a>
+                    <a href = "/aboutme.html" class="menuLinks"><li>About me</li></a>
+                </ul>
+                <script>
+                    const button = document.getElementById("menuButton");
+                    const menu = document.getElementById("menu")
+                    button.addEventListener("mouseenter", function(e){
+                        menu.hidden = false;
+                        menu.addEventListener("mouseleave", function(e){
+                        menu.hidden = true;
+                    });
+                    });
+        
+        
+                </script>
+            </div>
+        </nav>
+
+    </header>
+
+    <body>
+
+        <div class="aboutMeContainer">
+            <img class = "aboutMeImg"
+            src = "https://images.sidearmdev.com/resize?url=https%3a%2f%2fdxbhsrqyrr690.cloudfront.net%2fsidearm.nextgen.sites%2fephsports.williams.edu%2fimages%2f2025%2f2%2f26%2f2025_Williams_Womens_Lax_Headshots_Cote_Charlotte.jpg&width=300&type=webp">    
+           <p class="aboutMeTxt">
+            Hi, I'm Charlotte Cote! I'm a current Sophomore at Williams college studying Computer Science and Economics! 
+            In my free time I like to watch movies, hang out with my dog, and reading. At Williams, I am a goalie on the women's lacrosse team.
+            </p>
+        </div>
+        <p></p>
+        <p class="favMovCtr"> My favorite movies: </p>
+        <div class="movies">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+                alt = "Interstellar">
+                <img src="https://lumiere-a.akamaihd.net/v1/images/p_walle_19753_69f7ff00.jpeg"
+                alt ="Wall-E">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_.jpg"
+                alt="Star Wars: The Empire Strikes Back">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Vforvendettamov.jpg"
+                alt="V for Vendetta">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Hereditary.png/250px-Hereditary.png"
+                alt="Hereditary">
+        </div>
+
+    </body>
+</html>
