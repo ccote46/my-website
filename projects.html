@@ -11,7 +11,7 @@
         <div class="logo">
             <a href="index.html">
                 <img class="cornerLogo"
-                    src="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Williams_Ephs_2021_logo.svg/1200px-Williams_Ephs_2021_logo.svg.png"
+                    src="https://cdn-icons-png.flaticon.com/512/3686/3686054.png"
                     alt="Logo" />
             </a>
             <p>Projects</p>
@@ -35,38 +35,193 @@
                         menu.hidden = true;
                     });
                     });
-        
-        
                 </script>
             </div>
         </nav>
-    
-
     </header>
 
     <body>
-        <div class="projContainer">
-            <div class="indivContainer">
-                <p>Tic-Tac-Toe</p>
-                <a href="https://github.com/ccote46/CS136-Final-Project-1"></a>
-                <img class="tictactoeImg"
-                src="https://upload.wikimedia.org/wikipedia/commons/3/32/Tic_tac_toe.svg"
-                alt="TicTacToe">
+        <div class="main">
+            <div class="actualStuff">
+                <!-- Project panels -->
+                <div class="projContainer" id="projContainer">
+                    <div class="indivContainer" id="tictactoeholder">
+                        <p>Tic-Tac-Toe</p>
+                        <a href="https://github.com/ccote46/CS136-Final-Project-1"></a>
+                        <img class="tictactoeImg"
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/32/Tic_tac_toe.svg"
+                        alt="TicTacToe">
+                    </div>
+
+                    <div class="indivContainer" id="portfolioholder">
+                        <p>Portfolio Website</p>
+                        <img class="portfolio"
+                        src="https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg"
+                        alt="">
+                    </div>
+                </div>
+
+                <!--This is the container for the individual projects-->
+                <div class="projInfo" id="projInfo">
+                    <div class="proj" id="tictactoeproj">
+                        <div class="xButton">
+                            <button id="xButtonTicTacToe">X</button>
+                        </div>
+                        <h2>Tic-Tac-Toe</h2>
+                        <div class="projContent">
+                            <div class="leftSection"> 
+                                <p>For my final project in Data Structures & Algorithms, we were tasked with creating our own version of a game form scratch while implementing a data structure we didn't learn about in class. We chose a bitboard, and constructed our tic-tac-toe around that using Java and the Java Swing library.</p>
+                            </div>
+                            <div class="rightSection">
+                                <p class="languages"><strong>Languages:</strong> Java</p>
+                                <a href="https://github.com/ccote46/CS136-Final-Project-1" class="githubLink" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="proj" id="portfolioproj">
+                        <div class="xButton">
+                            <button id="xButtonPortfolio">X</button>
+                        </div>
+                        <h2>Portfolio Website</h2>
+                        <div class="projContent">
+                            <div class="leftSection"> 
+                                <p>While learning HTML and CSS, I decided to make this website so I can show off everything that I've learned so far, in addition to testing my abilities with HTML and CSS! Hopefully I can come back and give this a major facelift once I've learned more :)</p>
+                            </div>
+                            <div class="rightSection">
+                                <p class="languages"><strong>Languages:</strong> HTML, CSS</p>
+                                <a href="https://github.com/ccote46/my-website" class="githubLink" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>And many more coming soon!</p>
             </div>
+        </div>
+        <!-- when you click on a project, a bigger menu pops up-->
+        <script>
+            const tictactoe = document.getElementById("tictactoeholder");
+            const portfolioholder = document.getElementById("portfolioholder");
+            const projContainer = document.getElementById("projContainer");
+            const projInfo = document.getElementById("projInfo");
+            const tictactoeproj = document.getElementById("tictactoeproj");
+            const portfolioproj = document.getElementById("portfolioproj");
+            const xButtonTicTacToe = document.getElementById("xButtonTicTacToe");
+            const xButtonPortfolio = document.getElementById("xButtonPortfolio");
+
+            //open ttt when clicked
+            tictactoe.addEventListener("click", function(e){
+                projInfo.style.display = "flex";
+                tictactoeproj.style.display = "flex";
+                portfolioproj.style.display = "none";
+
+                projInfo.offsetHeight;
+                projInfo.classList.add("show");
+                projContainer.classList.add("blurred");
+            });
             
-            <div class = "indivContainer">
-                <p>Portfolio Website</p>
-                <img class="portfolio"
-                src=""
-                alt="">
-            </div>
-        </div>
+            //open portfolio when clicked
+            portfolioholder.addEventListener("click", function(e){
+                projInfo.style.display = "flex";
+                portfolioproj.style.display = "flex";
+                tictactoeproj.style.display = "none";
 
-        <div class="projContainer">
+                projInfo.offsetHeight;
+                projInfo.classList.add("show");
+                projContainer.classList.add("blurred");
+            });
         
-        </div>
+            /*close when clicking outside*/
+            document.addEventListener("click", function (e) {
+                if (!projInfo.contains(e.target) && !tictactoe.contains(e.target) && !portfolioholder.contains(e.target)) {
+                    projInfo.classList.remove("show");
+                    projContainer.classList.remove("blurred");
+                    // Hide after fade completes
+                    setTimeout(() => {
+                        if (!projInfo.classList.contains("show")) {
+                            projInfo.style.display = "none";
+                        }
+                    }, 300);
+                }
+            });
 
+            //Close ttt page when x is clicked
+            xButtonTicTacToe.addEventListener("click", function(e){
+                projInfo.classList.remove("show");
+                projContainer.classList.remove("blurred");
+                setTimeout(() => {
+                    if (!projInfo.classList.contains("show")) {
+                        projInfo.style.display = "none";
+                    }
+                }, 300);
+            });
 
+            //close portfolio page when x is clicked
+            xButtonPortfolio.addEventListener("click", function(e){
+                projInfo.classList.remove("show");
+                projContainer.classList.remove("blurred");
+                setTimeout(() => {
+                    if (!projInfo.classList.contains("show")) {
+                        projInfo.style.display = "none";
+                    }
+                }, 300);
+            });
 
+        </script>
+
+        <footer class="pageFooter">
+            <p class="footerTxt">Thanks for visiting. Let's connect!</p>
+            <div class="imageContainer">
+                <a href="https://github.com/ccote46" class="imageLink">
+                    <img id="Github"
+                    class="socialLogo" 
+                    src="https://img.icons8.com/ios11/512/737373/github.png"
+                    alt="Check out my github!">
+                </a>
+                <a href="https://www.linkedin.com/in/charlotte-cote-4a7224378/" class="imageLink">
+                    <img id="Linkedin"
+                    class="socialLogo"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_W-5I4xu8SED_l8MkGR42PdTszZm4xeNt-A&s"
+                    alt="Check out my Linkedin!">
+                </a>
+                <a href="mailto:crc5@williams.edu" class="imageLink">
+                    <img id="Gmail"
+                    class="socialLogo"
+                    src="https://pngimg.com/d/email_PNG49.png"
+                    alt="Email me!">
+                </a>
+
+                
+                <script>
+                    //have footer images change color when mouse hover
+                    const Github = document.getElementById("Github");
+                    const Linkedin = document.getElementById("Linkedin");
+                    const Gmail = document.getElementById("Gmail");
+
+                    Github.addEventListener("mouseenter",function(e){
+                        Github.src = "https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png";
+                        Github.addEventListener("mouseleave",function(e){
+                            Github.src = "https://img.icons8.com/ios11/512/737373/github.png"
+                        });
+                    })
+
+                    Linkedin.addEventListener("mouseenter",function(e){
+                        Linkedin.src = "https://i.pinimg.com/736x/cf/f5/05/cff505c95c2aeb11d25559293febe6ac.jpg";
+                        Linkedin.addEventListener("mouseleave",function(e){
+                            Linkedin.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_W-5I4xu8SED_l8MkGR42PdTszZm4xeNt-A&s"
+                        });
+                    })
+
+                    Gmail.addEventListener("mouseenter", function(e){
+                        Gmail.src = "https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/purple-mail-icon.png"
+                        Gmail.addEventListener("mouseleave", function(e){
+                        Gmail.src="https://pngimg.com/d/email_PNG49.png";
+                        });
+                    });
+
+                </script>
+
+        </footer>
     </body>
+
 </html>

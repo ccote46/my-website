@@ -5,13 +5,13 @@
         <meta charset = "utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projects</title>        
-        <link href="styles.css" rel = "stylesheet">
+        <link href="/styles.css" rel = "stylesheet">
     </head>
     <header class="pageHeaderNav">
         <div class="logo">
             <a href="index.html">
                 <img class="cornerLogo"
-                    src="https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Williams_Ephs_2021_logo.svg/1200px-Williams_Ephs_2021_logo.svg.png"
+                    src="https://cdn-icons-png.flaticon.com/512/3686/3686054.png"
                     alt="Logo" />
             </a>
             <p>About me</p>
@@ -44,29 +44,90 @@
     </header>
 
     <body>
-
-        <div class="aboutMeContainer">
-            <img class = "aboutMeImg"
-            src = "https://images.sidearmdev.com/resize?url=https%3a%2f%2fdxbhsrqyrr690.cloudfront.net%2fsidearm.nextgen.sites%2fephsports.williams.edu%2fimages%2f2025%2f2%2f26%2f2025_Williams_Womens_Lax_Headshots_Cote_Charlotte.jpg&width=300&type=webp">    
-           <p class="aboutMeTxt">
-            Hi, I'm Charlotte Cote! I'm a current Sophomore at Williams college studying Computer Science and Economics! 
-            In my free time I like to watch movies, hang out with my dog, and reading. At Williams, I am a goalie on the women's lacrosse team.
-            </p>
+        <div class="actualStuff">
+            <!-- About me text + image -->
+            <div class="aboutMeContainer">
+                <img class = "aboutMeImg"
+                src = "https://images.sidearmdev.com/resize?url=https%3a%2f%2fdxbhsrqyrr690.cloudfront.net%2fsidearm.nextgen.sites%2fephsports.williams.edu%2fimages%2f2025%2f2%2f26%2f2025_Williams_Womens_Lax_Headshots_Cote_Charlotte.jpg&width=300&type=webp">    
+            <p class="aboutMeTxt">
+                Hi, I'm Charlotte Cote! I'm a current Sophomore at Williams college studying Computer Science and Economics! 
+                In my free time I like to watch movies, hang out with my dog, and read. At Williams, I am a goalie on the women's lacrosse team.
+                </p>
+            </div>
+            <p></p>
+            <t class="favMovCtr"> My favorite movies:</t>
+        
+            <!--Holds all the movie frames-->
+            <div class="movies">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+                    alt = "Interstellar">
+                    <img src="https://lumiere-a.akamaihd.net/v1/images/p_walle_19753_69f7ff00.jpeg"
+                    alt ="Wall-E">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_.jpg"
+                    alt="Star Wars: The Empire Strikes Back">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Vforvendettamov.jpg"
+                    alt="V for Vendetta">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Hereditary.png/250px-Hereditary.png"
+                    alt="Hereditary">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Little_Women_%282019_film%29.jpeg"
+                    alt="Little Women">
+            </div>
         </div>
-        <p></p>
-        <p class="favMovCtr"> My favorite movies: </p>
-        <div class="movies">
-                <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
-                alt = "Interstellar">
-                <img src="https://lumiere-a.akamaihd.net/v1/images/p_walle_19753_69f7ff00.jpeg"
-                alt ="Wall-E">
-                <img src="https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_.jpg"
-                alt="Star Wars: The Empire Strikes Back">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Vforvendettamov.jpg"
-                alt="V for Vendetta">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/Hereditary.png/250px-Hereditary.png"
-                alt="Hereditary">
-        </div>
-
+        <footer class="pageFooter">
+            <p class="footerTxt">Thanks for visiting. Let's connect!</p>
+            <div class="imageContainer">
+                <a href="https://github.com/ccote46" class="imageLink">
+                    <img id="Github"
+                    class="socialLogo" 
+                    src="https://img.icons8.com/ios11/512/737373/github.png"
+                    alt="Check out my github!">
+                </a>
+                <a href="https://www.linkedin.com/in/charlotte-cote-4a7224378/" class="imageLink">
+                    <img id="Linkedin"
+                    class="socialLogo"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_W-5I4xu8SED_l8MkGR42PdTszZm4xeNt-A&s"
+                    alt="Check out my Linkedin!">
+                </a>
+                <a href="mailto:crc5@williams.edu" class="imageLink">
+                    <img id="Gmail"
+                    class="socialLogo"
+                    src="https://pngimg.com/d/email_PNG49.png"
+                    alt="Email me!">
+                </a>
+    
+                
+                <script>
+                    //have footer images change color when mouse hover
+                    const Github = document.getElementById("Github");
+                    const Linkedin = document.getElementById("Linkedin");
+                    const Gmail = document.getElementById("Gmail");
+    
+                    Github.addEventListener("mouseenter",function(e){
+                        Github.src = "https://icones.pro/wp-content/uploads/2021/06/icone-github-violet.png";
+                        Github.addEventListener("mouseleave",function(e){
+                            Github.src = "https://img.icons8.com/ios11/512/737373/github.png"
+                        });
+                    })
+    
+                    Linkedin.addEventListener("mouseenter",function(e){
+                        Linkedin.src = "https://i.pinimg.com/736x/cf/f5/05/cff505c95c2aeb11d25559293febe6ac.jpg";
+                        Linkedin.addEventListener("mouseleave",function(e){
+                            Linkedin.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_W-5I4xu8SED_l8MkGR42PdTszZm4xeNt-A&s"
+                        });
+                    })
+    
+                    Gmail.addEventListener("mouseenter", function(e){
+                        Gmail.src = "https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/purple-mail-icon.png"
+                        Gmail.addEventListener("mouseleave", function(e){
+                        Gmail.src="https://pngimg.com/d/email_PNG49.png";
+                        });
+                    });
+    
+                </script>
+    
+        </footer>
     </body>
+
+    
+
 </html>
