@@ -59,6 +59,13 @@
                         src="https://www.graffiti9.com/wp-content/uploads/2019/10/Website-Banner.jpg"
                         alt="">
                     </div>
+
+                    <div class="indivContainer" id="steamPriceHolder">
+                        <p>Steam Price Tracker</p>
+                        <img class="priceImg"
+                        src="https://catnessgames.com/wp-content/uploads/2024/12/tipos-videojuegos-consolas-y-plataformas.jpg"
+                        alt="">
+                    </div>
                 </div>
 
                 <!--This is the container for the individual projects-->
@@ -94,26 +101,49 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="proj" id="steamPriceProj">
+                        <div class="xButton">
+                            <button id="xButtonSteam">X</button>
+                        </div>
+                        <h2>Steam Game Price Tracker</h2>
+                        <div class="projContent">
+                            <div class="leftSection"> 
+                                <p>A Python application that monitors Steam game prices and sends automated email alerts when games reach your target price. Built to learn API integration, database design, and automated task scheduling while solving a real problem I face: tracking when I can finally afford a game!</p>
+                            </div>
+                            <div class="rightSection">
+                                <p class="languages"><strong>Languages:</strong> Python, SQLite</p>
+                                <a href="https://github.com/ccote46/Steam-Game-Price-Tracker-Alerter" class="githubLink" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <p>And many more coming soon!</p>
             </div>
         </div>
         <!-- when you click on a project, a bigger menu pops up-->
-        <script>
-            const tictactoe = document.getElementById("tictactoeholder");
-            const portfolioholder = document.getElementById("portfolioholder");
+        <script>   
             const projContainer = document.getElementById("projContainer");
             const projInfo = document.getElementById("projInfo");
+            
+            const tictactoe = document.getElementById("tictactoeholder");
             const tictactoeproj = document.getElementById("tictactoeproj");
-            const portfolioproj = document.getElementById("portfolioproj");
             const xButtonTicTacToe = document.getElementById("xButtonTicTacToe");
+
+            const portfolioholder = document.getElementById("portfolioholder");
+            const portfolioproj = document.getElementById("portfolioproj");
             const xButtonPortfolio = document.getElementById("xButtonPortfolio");
+
+            const steamPriceHolder = document.getElementById("steamPriceHolder")
+            const steamProj = document.getElementById("steamPriceProj")
+            const xButtonSteam = document.getElementById("xButtonSteam");
 
             //open ttt when clicked
             tictactoe.addEventListener("click", function(e){
                 projInfo.style.display = "flex";
                 tictactoeproj.style.display = "flex";
                 portfolioproj.style.display = "none";
+                steamProj.style.display = "none";
 
                 projInfo.offsetHeight;
                 projInfo.classList.add("show");
@@ -125,15 +155,30 @@
                 projInfo.style.display = "flex";
                 portfolioproj.style.display = "flex";
                 tictactoeproj.style.display = "none";
+                steamProj.style.display = "none";
 
                 projInfo.offsetHeight;
                 projInfo.classList.add("show");
                 projContainer.classList.add("blurred");
             });
         
+            //open steamtracker when clicked
+            steamPriceHolder.addEventListener("click", function(e){
+                projInfo.style.display = "flex";
+                steamProj.style.display = "flex";
+                tictactoeproj.style.display = "none";
+                portfolioproj.style.display = "none";
+
+
+                projInfo.offsetHeight;
+                projInfo.classList.add("show");
+                projContainer.classList.add("blurred");
+            });
+
             /*close when clicking outside*/
             document.addEventListener("click", function (e) {
-                if (!projInfo.contains(e.target) && !tictactoe.contains(e.target) && !portfolioholder.contains(e.target)) {
+                if (!projInfo.contains(e.target) && !tictactoe.contains(e.target) && !portfolioholder.contains(e.target) && 
+                !steamPriceHolder.contains(e.target)) {
                     projInfo.classList.remove("show");
                     projContainer.classList.remove("blurred");
                     // Hide after fade completes
@@ -158,6 +203,16 @@
 
             //close portfolio page when x is clicked
             xButtonPortfolio.addEventListener("click", function(e){
+                projInfo.classList.remove("show");
+                projContainer.classList.remove("blurred");
+                setTimeout(() => {
+                    if (!projInfo.classList.contains("show")) {
+                        projInfo.style.display = "none";
+                    }
+                }, 300);
+            });
+
+            xButtonSteam.addEventListener("click", function(e){
                 projInfo.classList.remove("show");
                 projContainer.classList.remove("blurred");
                 setTimeout(() => {
