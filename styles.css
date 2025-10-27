@@ -42,7 +42,10 @@ p {
     font-size: 1rem;
 }
 
-
+body::-webkit-scrollbar{ 
+    display: none; 
+} 
+  
 
 /*vv Header code vv*/
 
@@ -252,6 +255,9 @@ p {
 
 }
 
+.movies::-webkit-scrollbar{ 
+    display: none; 
+} 
 
 .movies img {
     max-height: 300px;
@@ -274,7 +280,10 @@ p {
     background-color:var(--bg-dark);
     display: inline;
     padding-left: 3px;
+    padding-right: 3px;
     max-width: 300px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .songHolder{
@@ -304,6 +313,7 @@ p {
 /* This is the container that holds all of the individual projects */
 .projContainer{
     display: flex;
+    flex-wrap: wrap;
     padding:10px;
     gap: 20px;
     justify-content: center;
@@ -349,7 +359,7 @@ p {
 
 /*Format of the box holding the about project info*/
 .projInfo{
-    position: fixed;
+    position: absolute;
     text-align: left;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -410,7 +420,7 @@ p {
 
 /* Right section holds languages + github button */
 .rightSection {
-    flex: 0 0 80px;
+    flex: 0 0 100px;
     text-align: right;
     display: flex;
     flex-direction: column;
