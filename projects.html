@@ -66,6 +66,13 @@
                         src="https://catnessgames.com/wp-content/uploads/2024/12/tipos-videojuegos-consolas-y-plataformas.jpg"
                         alt="">
                     </div>
+
+                    <div class="indivContainer" id="typeRaceHolder">
+                        <p>TypeRace</p>
+                        <img class="raceImg"
+                        src="https://flagexpressions.wordpress.com/wp-content/uploads/2010/08/checkered-flag1.jpg"
+                        alt="">
+                    </div>
                 </div>
 
                 <!--This is the container for the individual projects-->
@@ -117,6 +124,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="proj" id="typeRaceProj">
+                        <div class="xButton">
+                            <button id="xButtonType">X</button>
+                        </div>
+                        <h2>TypeRace</h2>
+                        <div class="projContent">
+                            <div class="leftSection"> 
+                                <p>A website that tracks users accuracy, speed, and words-per-minute while typing a given paragraph of varying difficulty levels (easy, medium, and hard). Uses its own custom-made timer and plans for a users leaderboard are coming soon! </p>
+                            </div>
+                            <div class="rightSection">
+                                <p class="languages"><strong>Languages:</strong> HTML/CSS, JavaScript, jQuery</p>
+                                <a href="https://github.com/ccote46/TypeRace" class="githubLink" target="_blank">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <p>And many more coming soon!</p>
             </div>
@@ -134,9 +157,13 @@
             const portfolioproj = document.getElementById("portfolioproj");
             const xButtonPortfolio = document.getElementById("xButtonPortfolio");
 
-            const steamPriceHolder = document.getElementById("steamPriceHolder")
-            const steamProj = document.getElementById("steamPriceProj")
+            const steamPriceHolder = document.getElementById("steamPriceHolder");
+            const steamProj = document.getElementById("steamPriceProj");
             const xButtonSteam = document.getElementById("xButtonSteam");
+
+            const typeRaceHolder = document.getElementById("typeRaceHolder")
+            const typeRaceProj = document.getElementById("typeRaceProj");
+            const xButtonType = document.getElementById("xButtonType");
 
             //open ttt when clicked
             tictactoe.addEventListener("click", function(e){
@@ -144,6 +171,7 @@
                 tictactoeproj.style.display = "flex";
                 portfolioproj.style.display = "none";
                 steamProj.style.display = "none";
+                typeRaceProj.style.display = "none";
 
                 projInfo.offsetHeight;
                 projInfo.classList.add("show");
@@ -156,6 +184,7 @@
                 portfolioproj.style.display = "flex";
                 tictactoeproj.style.display = "none";
                 steamProj.style.display = "none";
+                typeRaceProj.style.display = "none";
 
                 projInfo.offsetHeight;
                 projInfo.classList.add("show");
@@ -168,6 +197,20 @@
                 steamProj.style.display = "flex";
                 tictactoeproj.style.display = "none";
                 portfolioproj.style.display = "none";
+                typeRaceProj.style.display = "none";
+
+
+                projInfo.offsetHeight;
+                projInfo.classList.add("show");
+                projContainer.classList.add("blurred");
+            });
+
+            typeRaceHolder.addEventListener("click", function(e){
+                projInfo.style.display = "flex";
+                typeRaceProj.style.display = "flex";
+                steamProj.style.display = "none";
+                tictactoeproj.style.display = "none";
+                portfolioproj.style.display = "none";
 
 
                 projInfo.offsetHeight;
@@ -178,7 +221,7 @@
             /*close when clicking outside*/
             document.addEventListener("click", function (e) {
                 if (!projInfo.contains(e.target) && !tictactoe.contains(e.target) && !portfolioholder.contains(e.target) && 
-                !steamPriceHolder.contains(e.target)) {
+                !steamPriceHolder.contains(e.target) && !typeRaceHolder.contains(e.target)) {
                     projInfo.classList.remove("show");
                     projContainer.classList.remove("blurred");
                     // Hide after fade completes
@@ -222,6 +265,15 @@
                 }, 300);
             });
 
+            xButtonType.addEventListener("click", function(e){
+                projInfo.classList.remove("show");
+                projContainer.classList.remove("blurred");
+                setTimeout(() => {
+                    if (!projInfo.classList.contains("show")) {
+                        projInfo.style.display = "none";
+                    }
+                }, 300);
+            });
         </script>
 
         <footer class="pageFooter">
