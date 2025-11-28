@@ -65,10 +65,10 @@ body::-webkit-scrollbar{
 .pageHeaderNav {
     display: flex;
     justify-content: space-between; /* Push left and right content apart */
-    align-items: center;            /* Vertically center items */
-    padding: 5px 1px;             /* Optional spacing */
-    background-color: var(--bg-light);      /* Optional: light background */
-    border-bottom: 1px solid var(--highlight);  /* Optional: bottom border */
+    align-items: center;            
+    padding: 5px 1px;             
+    background-color: var(--bg-light);      
+    border-bottom: 1px solid var(--highlight);  
 }
 
 /* Logo container (top L in header) */
@@ -170,7 +170,7 @@ body::-webkit-scrollbar{
 }
 
 
-/*vv ActualStuff is the container for all the stuff on every page (dont fw this) vv*/
+/*vv ActualStuff is the container for all the stuff on every page (dont mw this) vv*/
 .actualStuff {
     background-color: #CC9AEA;
     display: flex;
